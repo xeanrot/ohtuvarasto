@@ -2,6 +2,8 @@ import unittest
 from varasto import Varasto
 
 
+## LOL RANDOM EDIT
+
 class TestVarasto(unittest.TestCase):
     def setUp(self):
         self.varasto = Varasto(10)
