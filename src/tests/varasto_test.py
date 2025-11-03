@@ -2,8 +2,6 @@ import unittest
 from varasto import Varasto
 
 
-## LOL RANDOM EDIT
-
 class TestVarasto(unittest.TestCase):
     def setUp(self):
         self.varasto = Varasto(10)
@@ -15,16 +13,16 @@ class TestVarasto(unittest.TestCase):
     def test_uudella_varastolla_oikea_tilavuus(self):
         self.assertAlmostEqual(self.varasto.tilavuus, 10)
 	
-    #Tää kusee, pitäs testaa printii muttei syystä tai toisesta toimi
+    #Testaa printin
     def test_printtaus(self):
         self.varasto.lisaa_varastoon(8)
         lmao = f"saldo = 8, vielä tilaa 2"
         self.assertEqual(str(self.varasto.__str__()), lmao)
 	
 	#Liian pieni varasto
-    #def test_uudella_varastolla_liian_pieni(self):
-     #   self.varasto = Varasto(-1)
-      #  self.assertAlmostEqual(self.varasto.tilavuus, 0)
+    def test_uudella_varastolla_liian_pieni(self):
+        self.varasto = Varasto(-1)
+        self.assertAlmostEqual(self.varasto.tilavuus, 0)
 		
 	#Alkusaldo oikea
     def test_alkusaldo_oikea(self):
