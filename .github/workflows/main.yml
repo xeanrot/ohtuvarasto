@@ -20,16 +20,13 @@ jobs:
         run: pip install poetry
       - name: Install dependencies
         run: poetry install
-      - name: Install pip req
-        run: pip install -r requirements.txt
       - name: Run tests
         run: poetry run coverage run --branch -m pytest  
-      - name: Lint
-        run: poetry run pylint src  
       - name: Coverage report
         run: poetry run coverage xml
       - name: Coverage report to Codecov
         uses: codecov/codecov-action@v4
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+      - name: Lint
+        run: poetry run pylint src
