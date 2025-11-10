@@ -28,5 +28,9 @@ jobs:
         uses: codecov/codecov-action@v4
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Shell install
+        run: poetry self add poetry-plugin-shell
+      - name: Shell activation
+        run: poetry shell
       - name: Lint
         run: poetry run pylint src
