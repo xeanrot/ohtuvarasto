@@ -20,6 +20,8 @@ jobs:
         run: pip install poetry
       - name: Install dependencies
         run: poetry install
+      - name: Install shell
+        run: poetry shell
       - name: Run tests
         run: poetry run coverage run --branch -m pytest  
       - name: Lint
